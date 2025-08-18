@@ -2,11 +2,11 @@ package patterns.structural;
 
 import model.Tarefa;
 
-public class TarefaPadrao implements TarefaInterface{
+public class TarefaSimples implements TarefaInterface{
 
-    private TarefaInterface tarefa;
+    private Tarefa tarefa;
 
-    public TarefaPadrao(TarefaInterface tarefa) {
+    public TarefaSimples(Tarefa tarefa) {
         this.tarefa = tarefa;
     }
 
