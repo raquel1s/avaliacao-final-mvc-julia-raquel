@@ -1,6 +1,9 @@
 package model;
 
+import java.text.DateFormat;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 public class Tarefa {
 
@@ -50,10 +53,11 @@ public class Tarefa {
 
     @Override
     public String toString() {
+        DateTimeFormatter formatoBrasil = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         return "--Tarefa-- " +
-                "\ntitulo: " + titulo +
-                "\ndescricao: " + descricao +
-                "\nprioridade: " + prioridade +
-                "\nprazoConclusao: " + prazoConclusao;
+                "\nTítulo: " + titulo +
+                "\nDescricao: " + descricao +
+                "\nPrioridade: " + prioridade +
+                "\nPrazo de Conclusao: " + prazoConclusao.format(formatoBrasil) + "\n";
     }
 }

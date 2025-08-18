@@ -23,6 +23,10 @@ public class TarefaController {
         this.tarefas = new ArrayList<>();
     }
 
+    public TarefaController(){
+
+    }
+
     public Tarefa criarTarefa(String titulo, String descricao, Prioridade prioridade, LocalDate prazoConclusao){
         if(titulo == null){
             System.err.println("\nO título é obrigatório!");
@@ -46,6 +50,7 @@ public class TarefaController {
 
         Tarefa tarefa = tarefafactory.criarTarefa(titulo, descricao, prioridade, prazoConclusao);
         tarefas.add(tarefa);
+        System.out.println("\nTarefa criada com sucesso!");
 
         return tarefa;
     }
