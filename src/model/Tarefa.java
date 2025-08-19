@@ -68,6 +68,6 @@ public class Tarefa {
                 "\nTítulo: " + titulo +
                 "\nDescricao: " + descricao +
                 "\nPrioridade: " + prioridade +
-                "\nPrazo de Conclusao: " + prazoConclusao.format(formatoBrasil) + "\n";
+                "\nPrazo de Conclusão: " + prazoConclusao.format(formatoBrasil) + "\n";
     }
 }

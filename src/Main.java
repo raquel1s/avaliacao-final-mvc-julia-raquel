@@ -91,7 +91,6 @@ public class Main {
 
         System.out.println("Informe o Titulo da tarefa que deseja concluir: ");
         String titulo = sc.nextLine();
-        System.out.println(titulo);
 
         for(Tarefa tarefa: controller.listarTodasTarefas()){
             if(tarefa.getTitulo().equalsIgnoreCase(titulo)){
