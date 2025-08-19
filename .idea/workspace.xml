@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c44d083-c09e-4282-907f-26cff3d988bc" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/TarefaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/TarefaController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Tarefa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Tarefa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/patterns/structural/DecoratorTarefaConcluida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/patterns/structural/DecoratorTarefaConcluida.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,11 +51,22 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1755553638187</updated>
-      <workItem from="1755553639187" duration="4695000" />
+      <workItem from="1755553639187" duration="7229000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/controller/TarefaController.java</url>
+          <line>63</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

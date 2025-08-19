@@ -1,8 +1,10 @@
+import com.sun.security.jgss.GSSUtil;
 import controller.TarefaController;
 import model.Prioridade;
 import model.Tarefa;
 import patterns.creation.TarefaFactory;
 import patterns.creation.TarefaPadrao;
+import patterns.structural.TarefaInterface;
 import view.Menu;
 
 import java.time.LocalDate;
@@ -31,13 +33,13 @@ public class Main {
                     listarTarefas();
                 }
                 case 3 -> {
-//                    marcarTarefaConcluida();
+                    marcarTarefaConcluida();
                 }
                 case 4 -> {
-//                    listarVencidas();
+                    listarVencidas();
                 }
                 case 5 -> {
-//                    filtrarPorPrioridade();
+                    filtrarPorPrioridade();
                 }
                 case 0 -> {
                     System.out.println("Saindo do sistema...");
@@ -46,6 +48,65 @@ public class Main {
         }
         while (opcao != 0);
 
+    }
+
+    private static void filtrarPorPrioridade() {
+        System.out.println("---Filtrar tarefa por Prioridade---");
+        System.out.println("1. BAIXA");
+        System.out.println("2. MÉDIA");
+        System.out.println("3. ALTA");
+        System.out.println("Informe a prioridade que deseja listar: ");
+        int prioridade = sc.nextInt();
+        sc.nextLine();
+
+        switch (prioridade) {
+            case 1 -> {
+                for(Tarefa tarefa : controller.tarefasPrioridadeBaixa()){
+                    System.out.println(tarefa);
+                }
+            }
+            case 2 -> {
+                for(Tarefa tarefa : controller.tarefasPrioridadeMedia()){
+                    System.out.println(tarefa);
+                }
+            }
+            case 3 -> {
+                for(Tarefa tarefa : controller.tarefasPrioridadeAlta()){
+                    System.out.println(tarefa);
+                }
+            }
+            default -> {
+                System.out.println("Valor inválido!");
+            }
+        }
+    }
+
+    private static void listarVencidas() {
+        System.out.println("---Tarefas Vencidas---");
+
+        for(Tarefa tarefa : controller.tarefasVencidas()){
+            System.out.println(tarefa);
+        }
+    }
+
+    private static void marcarTarefaConcluida() {
+        System.out.println("---Marcar tarefa como Concluída---");
+
+        for(Tarefa tarefa : controller.listarTodasTarefas()){
+            if(!(tarefa.isConcluida())){
+                System.out.println(tarefa);
+            }
+        }
+
+        System.out.println("Informe o Titulo da tarefa que deseja concluir: ");
+        String titulo = sc.nextLine();
+        System.out.println(titulo);
+
+        for(Tarefa tarefa: controller.listarTodasTarefas()){
+            if(tarefa.getTitulo().equalsIgnoreCase(titulo)){
+                System.out.println(controller.concluirTarefa(tarefa));
+            }
+        }
     }
 
     private static void listarTarefas() {

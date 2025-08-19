@@ -12,6 +12,6 @@ public class DecoratorTarefaConcluida implements TarefaInterface{
 
     @Override
     public String exibir() {
-        return tarefa.exibir() + "\n[CONCLUÍDA]";
+        return tarefa.exibir() + "[CONCLUÍDA]";
     }
 }

@@ -59,11 +59,12 @@ public class TarefaController {
         return tarefas;
     }
 
-    public void concluirTarefa(Tarefa tarefa){
+    public String concluirTarefa(Tarefa tarefa){
+        tarefa.setConcluida(true);
         TarefaSimples tarefaSimples = new TarefaSimples(tarefa);
         DecoratorTarefaConcluida tarefaConcluida = new DecoratorTarefaConcluida(tarefaSimples);
 
-        tarefaConcluida.exibir();
+       return tarefaConcluida.exibir();
     }
 
     public ArrayList<Tarefa> tarefasVencidas(){

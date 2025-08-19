@@ -11,16 +11,26 @@ public class Tarefa {
     private String descricao;
     private Prioridade prioridade;
     private LocalDate prazoConclusao;
+    private boolean concluida;
 
     public Tarefa(String titulo, String descricao, Prioridade prioridade, LocalDate prazoConclusao) {
         this.titulo = titulo;
         this.descricao = descricao;
         this.prioridade = prioridade;
         this.prazoConclusao = prazoConclusao;
+        this.concluida = false;
     }
 
     public String getTitulo() {
         return titulo;
+    }
+
+    public boolean isConcluida() {
+        return concluida;
+    }
+
+    public void setConcluida(boolean concluida) {
+        this.concluida = concluida;
     }
 
     public void setTitulo(String titulo) {
