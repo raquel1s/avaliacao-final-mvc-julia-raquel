@@ -35,7 +35,7 @@ O sistema foi desenvolvido seguindo o padrão **MVC (Model-View-Controller)**:
 
 ### 1️⃣ Clonar o repositório
 ```bash
-git clone <https://github.com/raquel1s/avaliacao-final-mvc-julia-raquel.git>
+git clone https://github.com/raquel1s/avaliacao-final-mvc-julia-raquel.git
 cd avaliacao-final-mvc-julia-raquel
 ```
 
