@@ -23,10 +23,6 @@ public class TarefaController {
         this.tarefas = new ArrayList<>();
     }
 
-    public TarefaController(){
-
-    }
-
     public Tarefa criarTarefa(String titulo, String descricao, Prioridade prioridade, LocalDate prazoConclusao){
         if(titulo == null){
             System.err.println("\nO título é obrigatório!");
@@ -72,7 +68,7 @@ public class TarefaController {
         FiltroTarefaVencida vencido = new FiltroTarefaVencida();
 
         for(Tarefa t : tarefas){
-            if(vencido.filtrar(t)){
+            if(vencido.filtrar(t) && !(t.isConcluida())){
                 tarefasVencidas.add(t);
             }
         }

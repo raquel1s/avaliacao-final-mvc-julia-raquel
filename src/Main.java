@@ -1,17 +1,12 @@
-import com.sun.security.jgss.GSSUtil;
 import controller.TarefaController;
 import model.Prioridade;
 import model.Tarefa;
 import patterns.creation.TarefaFactory;
 import patterns.creation.TarefaPadrao;
-import patterns.structural.TarefaInterface;
 import view.Menu;
-
 import java.time.LocalDate;
 import java.util.Scanner;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     private static final Scanner sc = new Scanner(System.in);
     private static final  TarefaFactory factory = new TarefaPadrao();
@@ -20,33 +15,23 @@ public class Main {
 
     public static void main(String[] args) {
         int opcao = 0;
+
         do {
             Menu.menuPrincipal();
             opcao = sc.nextInt();
             sc.nextLine();
 
             switch (opcao) {
-                case 1 -> {
-                    criarTarefa();
-                }
-                case 2 -> {
-                    listarTarefas();
-                }
-                case 3 -> {
-                    marcarTarefaConcluida();
-                }
-                case 4 -> {
-                    listarVencidas();
-                }
-                case 5 -> {
-                    filtrarPorPrioridade();
-                }
+                case 1 -> criarTarefa();
+                case 2 -> listarTarefas();
+                case 3 -> marcarTarefaConcluida();
+                case 4 -> listarVencidas();
+                case 5 -> filtrarPorPrioridade();
                 case 0 -> {
                     System.out.println("Saindo do sistema...");
                 }
             }
-        }
-        while (opcao != 0);
+        } while (opcao != 0);
 
     }
 
@@ -62,17 +47,23 @@ public class Main {
         switch (prioridade) {
             case 1 -> {
                 for(Tarefa tarefa : controller.tarefasPrioridadeBaixa()){
-                    System.out.println(tarefa);
+                    if(!tarefa.isConcluida()){
+                        System.out.println(tarefa);
+                    }
                 }
             }
             case 2 -> {
                 for(Tarefa tarefa : controller.tarefasPrioridadeMedia()){
-                    System.out.println(tarefa);
+                    if(!tarefa.isConcluida()){
+                        System.out.println(tarefa);
+                    }
                 }
             }
             case 3 -> {
                 for(Tarefa tarefa : controller.tarefasPrioridadeAlta()){
-                    System.out.println(tarefa);
+                    if(!tarefa.isConcluida()){
+                        System.out.println(tarefa);
+                    }
                 }
             }
             default -> {
@@ -93,7 +84,7 @@ public class Main {
         System.out.println("---Marcar tarefa como Concluída---");
 
         for(Tarefa tarefa : controller.listarTodasTarefas()){
-            if(!(tarefa.isConcluida())){
+            if(!tarefa.isConcluida()){
                 System.out.println(tarefa);
             }
         }
@@ -110,9 +101,12 @@ public class Main {
     }
 
     private static void listarTarefas() {
-
         for(Tarefa tarefa : controller.listarTodasTarefas()){
-            System.out.println(tarefa);
+            if(tarefa.isConcluida()){
+                System.out.println(controller.concluirTarefa(tarefa));
+            }else{
+                System.out.println(tarefa);
+            }
         }
     }
 
@@ -130,6 +124,7 @@ public class Main {
         System.out.println("3. ALTA");
         int prioridadeNUM = sc.nextInt();
         sc.nextLine();
+
         Prioridade prioridade = Prioridade.BAIXA;
 
         switch (prioridadeNUM){
@@ -147,10 +142,9 @@ public class Main {
         sc.nextLine();
 
         int ano = LocalDate.now().getYear();
-
         LocalDate prazo = LocalDate.of(ano, mes, dia);
 
-        controller.criarTarefa(titulo, descricao,prioridade,prazo);
+        controller.criarTarefa(titulo, descricao, prioridade, prazo);
 
     }
 }
