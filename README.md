@@ -35,16 +35,11 @@ O sistema foi desenvolvido seguindo o padrão **MVC (Model-View-Controller)**:
 
 ### 1️⃣ Clonar o repositório
 ```bash
-git clone <URL_DO_REPOSITORIO>
+git clone <https://github.com/raquel1s/avaliacao-final-mvc-julia-raquel.git>
 cd avaliacao-final-mvc-julia-raquel
 ```
 
-### 2️⃣ Compilar os arquivos
-```bash
-javac src/*.java
-```
-
-### 3️⃣ Executar o programa
+### 2️⃣ Executar o programa
 ```bash
 java src.Main
 ```
@@ -67,31 +62,18 @@ Escolha:
 ```
 
 ### ✅ Criar Tarefa
-```bash
-Digite o título: ...
-Digite a descrição: ...
-Digite a prioridade (1-BAIXA, 2-MÉDIA, 3-ALTA): ...
-Digite o prazo (AAAA-MM-DD): ...
-```
+- Entrada de título, descrição, prioridade (1-BAIXA, 2-MÉDIA, 3-ALTA) e prazo (AAAA-MM-DD).
 
 ### 📋 Listar Tarefas
-```bash
-Tarefa 1 - [CONCLUÍDA]
-Tarefa 2 - Prazo: 2025-08-20
-```
+- Mostra todas as tarefas criadas.
+- Tarefas concluídas são exibidas com [CONCLUÍDA] (Decorator).
 
 ### ✔️ Concluir Tarefa
-```bash
-Digite o título da tarefa que deseja concluir: ...
-```
+- Usuário informa o título da tarefa.
+- Tarefa é marcada como concluída (Service) e exibida com [CONCLUÍDA].
 
 ### ⏳ Listar Vencidas
-```bash
-Tarefa X - Prazo: 2025-08-10 (VENCIDA)
-```
+- Mostra apenas as tarefas cujo prazo de conclusão é anterior à data atual.
 
 ### 🎯 Filtrar Tarefas
-```bash
-Filtrando por prioridade: ALTA
-- Tarefa Urgente [CONCLUÍDA]
-```
+- Permite verificar tarefas nas diferentes prioridades (BAIXA, MÉDIA, ALTA).
